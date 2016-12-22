@@ -1,0 +1,19 @@
+<template name="feedItem">
+	<article class="post-feed-item">
+		<div class="title-author-column">
+			<img src="{{author.avatar}}" alt="{{author.name}}">
+			{{#if isPrivate}}
+			<h2 class="title"><a href="{{pathFor 'privatePostPage'}}">{{title}}</a></h2>
+			{{else}}
+			<h2 class="title"><a href="{{pathFor 'postPage'}}">{{title}}</a></h2>
+			{{/if}}
+			<span class="author">by <strong>{{author.name}}</strong></span>
+		</div><div class="votes-column">
+			<strong>{{stats.votes.count}} Votes</strong>
+		</div><div class="comments-column">
+			<strong>{{stats.comments}} Comments</strong>
+		</div><div class="date-column">
+			<strong>{{humanDate created_at}}</strong>
+		</div>
+	</article>
+</template>

@@ -1,0 +1,27 @@
+<template name="feed">
+	<section id="posts-feed">
+		
+		{{#if noPosts}}
+			<h4>No posts to show in here</h4>
+		{{/if}}
+
+		{{#each posts}}
+		{{> feedItem}}
+		{{/each}}
+
+		<div class="load-more">
+			{{#if keepPaging}}
+			<a href="{{nextPageQuery}}" class="load-more-btn std-btn">
+				{{#if ready}}
+					Load More
+				{{else}}
+					<i class="fa fa-loader-spin"></i>
+				{{/if}}
+			</a>
+			{{else}}
+			No more results to show
+			{{/if}}
+		</div>
+
+	</section>
+</template>

@@ -1,0 +1,34 @@
+<template name="header">
+	{{> signupModal}}
+	{{> loginModal}}
+	{{> managePostModal}}
+
+	<header id="main-header">
+
+		<div class="top-head">
+			<a class="logo" href="{{pathFor 'home'}}">QuickPost</a>
+
+			<nav id="main-nav">
+				<ul>
+					<li><a href="{{pathFor 'bestPosts'}}">Best Posts</a></li>
+					{{#unless currentUser}}
+					<li><a class="call-login std-btn" href="">Log In</a></li>
+					<li><a class="call-signup std-btn" href="">Sign Up</a></li>
+					{{else}}
+					<li><a href="{{pathFor 'userPublicPosts'}}">My Public Posts</a></li>
+					<li><a href="{{pathFor 'userPirvatePosts'}}">My Private Posts</a></li>
+					<li><a class="std-btn" href="{{pathFor 'userProfile'}}">My Profile</a></li>
+					<li><a class="call-logout std-btn" href="">Log Out</a></li>
+					{{/unless}}
+				</ul>
+			</nav>
+		</div>
+
+		{{#if currentUser}}
+		<div class="bottom-head">
+			<a class="call-posteditor std-btn" href=""><i class="fa fa-plus"></i> New Post</a>
+		</div>
+		{{/if}}
+
+	</header>
+</template>

@@ -1,0 +1,14 @@
+<template name="userProfile">
+	<section id="user-profile">
+		<img src="{{currentUser.profile.avatar}}" alt="{{currentUser.profile.name}}">
+		<h1>{{currentUser.profile.name}}</h1>
+			
+		<div>
+		<strong>Email:</strong> {{currentUser.emails.[0].address}}
+		</div>
+		
+		<div>
+		<strong>Username:</strong> {{currentUser.profile.username}}
+		</div>
+	</section>
+</template>

@@ -1,0 +1,24 @@
+<template name="postPage">
+	<article id="post-page">
+		<header class="post-header">
+			<h1>{{post.title}}</h1>
+
+			<p class="author">
+				by {{post.author.name}}
+			</p>
+			
+			{{#if currentUser}}
+			<a href="" class="vote-post std-btn"><i class="fa fa-thumbs-up"></i> {{voteLabel}}</a>
+			{{/if}}
+			
+			{{#if canEdit}}
+				<a class="edit-post std-btn" href=""><i class="fa fa-edit"></i> Edit Post</a>
+ 				<a class="delete-post std-btn danger" href=""><i class="fa fa-trash"></i> Delete Post</a>
+			{{/if}}
+		</header>
+
+		<section class="main">
+			{{{post.content.html}}}
+		</section>
+	</article>
+</template>
